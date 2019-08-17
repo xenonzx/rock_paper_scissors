@@ -39,17 +39,43 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: ListView(
-          children: List<Widget>.generate(
-              100,
-              (i) => Text(
-                    "item $i",
-                    textDirection: TextDirection.ltr,
-                  )),
-        ));
+      home: GameHome(),
+    );
   }
 }
+class  GameHome extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
 
+    return Container(
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.all(16) ,
+        child: Center(
+          child: Column(
+            mainAxisSize:MainAxisSize.min ,
+            children: [
+            Placeholder(
+              fallbackWidth: 300,
+              fallbackHeight: 300,
+            ),
+            Container(
+              height: 32,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+              Placeholder(fallbackWidth:100, fallbackHeight: 100,),
+              Placeholder(fallbackWidth:100, fallbackHeight: 100,),
+              Placeholder(fallbackWidth:100, fallbackHeight: 100,),
+            ],)
+          ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
